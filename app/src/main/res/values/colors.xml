@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="app_violet">#7781c8</color><!-- 系统用统一紫色 -->
+    <color name="app_gray">#929292</color><!--首页tab栏文字-->
+    <color name="white">#ffffff</color>
+
+</resources>

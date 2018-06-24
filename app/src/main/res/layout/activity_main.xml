@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.foumiu.start.huahong.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/main_square"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="parent" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/app_gray"
+        app:layout_constraintTop_toTopOf="@id/activity_main_bottom" />
+
+    <!-- 底部TAB栏 -->
+    <LinearLayout
+        android:id="@+id/activity_main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- 任务列表 -->
+        <LinearLayout
+            android:id="@+id/main_bottom_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp">
+
+            <ImageView
+                android:id="@+id/main_bottom_list_img"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/list_on" />
+
+            <TextView
+                android:id="@+id/main_bottom_list_text"
+                style="@style/font_main_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:text="悬赏列表" />
+        </LinearLayout>
+
+        <!-- 发布悬赏 -->
+        <LinearLayout
+            android:id="@+id/main_bottom_publish"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp">
+
+            <ImageView
+                android:id="@+id/main_bottom_publish_img"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/publish_off" />
+
+            <TextView
+                android:id="@+id/main_bottom_publish_text"
+                style="@style/font_main_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:text="发布悬赏" />
+        </LinearLayout>
+
+        <!-- 消息 -->
+        <LinearLayout
+            android:id="@+id/main_bottom_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp">
+
+            <ImageView
+                android:id="@+id/main_bottom_message_img"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/message_off" />
+
+            <TextView
+                android:id="@+id/main_bottom_message_text"
+                style="@style/font_main_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:text="消息" />
+        </LinearLayout>
+
+
+        <!-- 我 -->
+        <LinearLayout
+            android:id="@+id/main_bottom_mine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp">
+
+            <ImageView
+                android:id="@+id/main_bottom_mine_img"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/mine_off" />
+
+            <TextView
+                android:id="@+id/main_bottom_mine_text"
+                style="@style/font_main_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:text="我的" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
