@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.foumiu.start.huahong.MainActivity">
+    tools:context="com.foumiu.start.bangwo.MainActivity">
 
     <FrameLayout
         android:id="@+id/main_square"
@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
-                android:text="悬赏列表" />
+                android:text="@string/main_tab_list_desc" />
         </LinearLayout>
 
         <!-- 发布悬赏 -->
@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
-                android:text="发布悬赏" />
+                android:text="@string/main_tab_publish_desc" />
         </LinearLayout>
 
         <!-- 消息 -->
@@ -102,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
-                android:text="消息" />
+                android:text="@string/main_tab_message_desc" />
         </LinearLayout>
 
 
@@ -129,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-2dp"
-                android:text="我的" />
+                android:text="@string/main_tab_mine_desc" />
         </LinearLayout>
     </LinearLayout>
 

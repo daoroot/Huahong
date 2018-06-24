@@ -1,0 +1,236 @@
+
+"帮我" app 接口文档版本号: 0.0.1
+
+
+字段名称		数据类型	中文解释		可用值范围
+appVersion		String		app版本号
+status			Integer		请求状态		0:请求失败  1:请求成功
+message			String		服务器消息
+userId			Integer		用户ID
+nickname		String      昵称
+userType		Integer		用户类型		1:个人  2:公司
+password		String		密码
+name			String		用户姓名
+idNumber		String		身份证号
+phone			String		电话号码
+companyName		String		公司名称
+userGrade		Integer		用户等级		1~10（根据用户信息完善度确定值）
+orderId			Integer		用户编号		0~无穷大（有服务器生成，不可重复）
+employer		String		雇主名字
+desc			String		任务描述
+tip				double		佣金
+oerderStop		String		任务结束时间
+workGrade		Integer		任务等级		0~10  表示从 “一般 ~~  紧急”
+evolve			Integer		任务进展		0:刚发布  1:有人接单  2：任务完成  3:任务结束
+
+
+1，	接口名称：注册接口
+	接口地址：http://bangwo.com/.../register.do
+	请求参数：
+	{
+		"nickname":"史蒂夫",
+		"userType":"1",         //1:个人  2:公司
+		"password":"1234567",
+		"name":"李xx",
+		"idNumber":"130428198704302314",
+		"phone":"13900009999"
+		"companyName":"京东有限公司"
+	}
+	请求结果：
+	{
+		"status":1,					//0:请求失败  1:请求成功
+		"message":"success",		//失败的原因
+		"fields":{
+			"userId":001,
+			"nickname":"史蒂夫",
+			"password":"1234567",
+			"name":"李xx",
+			"idNumber":"130428198704302314",
+			"phone":"13900009999",
+			"companyName":""
+			"userGrade":10,
+			"companyName":"京东有限公司"
+		}
+	}
+
+2，	接口名称：登录接口
+	接口地址：http://bangwo.com/.../login.do
+	请求参数：
+	{
+		"nickname":"",
+		"password":"1234567"
+	}
+	请求结果：
+	{
+		"status":1,
+		"message":"success",
+		"fields":{
+			"userId":001,
+			"nickname":"史蒂夫",
+			"password":"1234567",
+			"name":"李xx",
+			"idNumber":"130428198704302314",
+			"phone":"13900009999",
+			"companyName":"京东有限公司"
+		}
+	}
+
+3，	接口名称：任务列表接口
+	接口地址：http://bangwo.com/.../orderList.do
+	请求参数
+	{
+		"appVersion":"1.1.0"
+	}
+	请求结果
+	{
+		"status":1,
+		"message":"success",
+		"fields":{
+			"orderId":"1234567890",
+			"employer":"张xx",
+			"phone":"18688888888",
+			"desc":"2018年7月初七中午12点30分，肥乡宾馆，1314房间送花儿一捧。",
+			"tip":30,
+			"oerderStop":"2018-07-07 12:20",
+			"workGrade":10,   //0~10  表示从 “一般 ~~  紧急”
+			"evolve":0,	//0:刚发布  1:有人接单  2：任务完成  3:任务结束
+			"workerList"[
+							{
+								"name":"李xx",
+								"phone":"13900001111"
+							},
+							{
+								"name":"王xx",
+								"phone":"13900001111"
+							}
+						]
+		}
+	}
+
+4，	接口名称：接单接口
+	接口地址：http://bangwo.com/.../receiveOrder
+	请求参数：
+	{
+		"userId":001,
+		"orderId":"1234567890",
+	}
+	请求结果：
+	{
+		"status":1,
+		"message":"success",
+		"fields":{
+			"workerList"[
+							{
+								"name":"李xx",
+								"phone":"13900001111"
+							},
+							{
+								"name":"王xx",
+								"phone":"13900001111"
+							}
+						]
+		}
+	}
+
+5，	接口名称：接单历史接口
+	接口地址：http://bangwo.com/.../receiveHistory.do
+	请求参数：
+	{
+		"userId":001
+	}
+	请求结果：
+	{
+		"status":1,
+		"message":"success",
+		"fields":{
+			"workerList"[
+							{
+								"orderId":"1234567890",
+								"employer":"张xx",
+								"phone":"18688888888",
+								"desc":"2018年7月初七中午12点30分，肥乡宾馆，1314房间送花儿一捧。",
+								"tip":30,
+								"oerderStop":"2018-07-07 12:20",
+								"workGrade":10,
+								"evolve":3,	//0:刚发布  1:有人接单  2：任务完成  3:任务结束
+							},
+							{
+								"orderId":"1234567890",
+								"employer":"张xx",
+								"phone":"18688888888",
+								"desc":"2018年7月初七中午12点30分，肥乡宾馆，1314房间送花儿一捧。",
+								"tip":30,
+								"oerderStop":"2018-07-07 12:20",
+								"workGrade":10,
+								"evolve":3,	//0:刚发布  1:有人接单  2：任务完成  3:任务结束
+							}
+						]
+		}
+	}
+
+6,	接口名称：下单接口
+	接口地址：http://bangwo.com/.../sendOrder.do
+	请求参数：
+	{
+		"userId":001,
+		"orderType":"1", //1:单人接单完成  2:多人接单竞争完成  3:多人接单合作完成
+		"personnelNumber":10,
+		"employer":"张xx",
+		"phone":"18688888888",
+		"desc":"2018年7月初七中午12点30分，肥乡宾馆，1314房间送花儿一捧。",
+		"tip":30,
+		"oerderStop":"2018-07-07 12:20",
+		"workGrade":10
+	}
+	请求结果：
+	{
+		"status":1,
+		"message":"success",
+		"fields":{
+					"orderId":"1234567890",
+					"employer":"张xx",
+					"phone":"18688888888",
+					"desc":"2018年7月初七中午12点30分，肥乡宾馆，1314房间送花儿一捧。",
+					"tip":30,
+					"oerderStop":"2018-07-07 12:20",
+					"workGrade":10,
+					"evolve":3,	//0:刚发布  1:有人接单  2：任务完成  3:任务结束
+				}
+	}
+
+7,	接口名称：下单历史接口
+	接口地址：http://bangwo.com/.../sendHistory.do
+	请求参数：
+	{
+		"userId":001
+	}
+
+	请求结果：
+	{
+		"status":1,
+		"message":"success",
+		"fields":{
+			"workerList"[
+							{
+								"orderId":"1234567890",
+								"employer":"张xx",
+								"phone":"18688888888",
+								"desc":"2018年7月初七中午12点30分，肥乡宾馆，1314房间送花儿一捧。",
+								"tip":30,
+								"oerderStop":"2018-07-07 12:20",
+								"workGrade":10,
+								"evolve":3,	//0:刚发布  1:有人接单  2：任务完成  3:任务结束
+							},
+							{
+								"orderId":"1234567890",
+								"employer":"张xx",
+								"phone":"18688888888",
+								"desc":"2018年7月初七中午12点30分，肥乡宾馆，1314房间送花儿一捧。",
+								"tip":30,
+								"oerderStop":"2018-07-07 12:20",
+								"workGrade":10,
+								"evolve":3,	//0:刚发布  1:有人接单  2：任务完成  3:任务结束
+							}
+						]
+		}
+	}

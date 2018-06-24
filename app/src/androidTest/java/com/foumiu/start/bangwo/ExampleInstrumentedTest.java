@@ -1,4 +1,4 @@
-package com.foumiu.start.huahong;
+package com.foumiu.start.bangwo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

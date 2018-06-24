@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Huahong</string>
+    <string name="app_name">帮帮我</string>
+
+    <string name="init_percent_disc">初始化进度：%1$d</string>
+
+    <string name="init_percent_complete">初始化完成，进入主页...</string>
+
+    <string name="main_tab_list_desc">悬赏列表</string>
+    <string name="main_tab_publish_desc">发布悬赏</string>
+    <string name="main_tab_message_desc">消息</string>
+    <string name="main_tab_mine_desc">我的</string>
 </resources>

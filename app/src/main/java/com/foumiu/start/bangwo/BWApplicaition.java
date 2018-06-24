@@ -1,4 +1,4 @@
-package com.foumiu.start.huahong;
+package com.foumiu.start.bangwo;
 
 import android.app.Application;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.support.v4.content.ContextCompat;
  * Created by dabo on 2018/6/24.
  */
 
-public class XSApplicaition extends Application {
+public class BWApplicaition extends Application {
 
     public static Resources resources;
     static final int version = Build.VERSION.SDK_INT;
@@ -22,11 +22,15 @@ public class XSApplicaition extends Application {
         resources = getResources();
     }
 
-    public static final int getColor(Context context, int id) {
+    public static final int getColor(Context ctx, int id) {
         if (version >= 23) {
-            return ContextCompat.getColor(context, id);
+            return ContextCompat.getColor(ctx, id);
         } else {
-            return context.getResources().getColor(id);
+            return ctx.getResources().getColor(id);
         }
+    }
+
+    public static final String getString(Context ctx, int id) {
+        return ctx.getResources().getString(id);
     }
 }

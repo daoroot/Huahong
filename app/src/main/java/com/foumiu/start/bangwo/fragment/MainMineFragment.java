@@ -1,4 +1,4 @@
-package com.foumiu.start.huahong.fragment;
+package com.foumiu.start.bangwo.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,15 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.foumiu.start.huahong.R;
+import com.foumiu.start.bangwo.R;
 
 /**
  * Created by dabo on 2018/6/24.
  */
 
-public class MineFragment extends Fragment {
+public class MainMineFragment extends Fragment {
 
-    public MineFragment() {
+    public MainMineFragment() {
     }
 
     private View view;

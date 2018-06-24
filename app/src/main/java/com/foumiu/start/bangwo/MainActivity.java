@@ -1,4 +1,4 @@
-package com.foumiu.start.huahong;
+package com.foumiu.start.bangwo;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.foumiu.start.huahong.fragment.MessageFragment;
-import com.foumiu.start.huahong.fragment.MineFragment;
-import com.foumiu.start.huahong.fragment.XSListFragment;
-import com.foumiu.start.huahong.fragment.XSPublishFragment;
+import com.foumiu.start.bangwo.fragment.MainMsgFragment;
+import com.foumiu.start.bangwo.fragment.MainMineFragment;
+import com.foumiu.start.bangwo.fragment.MainListFragment;
+import com.foumiu.start.bangwo.fragment.MainPublishFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        defaultColor = XSApplicaition.getColor(this, R.color.app_gray);
-        selectColor = XSApplicaition.getColor(this, R.color.app_violet);
+        defaultColor = BWApplicaition.getColor(this, R.color.app_gray);
+        selectColor = BWApplicaition.getColor(this, R.color.app_violet);
         mainStatus = MAIN_STATE_LIST;
         initViews();
         initFragments();
@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (mMineFragment != null)
             ft.remove(mMineFragment);
 
-        mListFragment = new XSListFragment();
-        mPublishFragment = new XSPublishFragment();
-        mMessageFragment = new MessageFragment();
-        mMineFragment = new MineFragment();
+        mListFragment = new MainListFragment();
+        mPublishFragment = new MainPublishFragment();
+        mMessageFragment = new MainMsgFragment();
+        mMineFragment = new MainMineFragment();
 
         ft.add(R.id.main_square, mListFragment);
         ft.add(R.id.main_square, mPublishFragment);

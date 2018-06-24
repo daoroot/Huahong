@@ -1,4 +1,4 @@
-package com.foumiu.start.huahong.fragment;
+package com.foumiu.start.bangwo.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.foumiu.start.huahong.R;
+import com.foumiu.start.bangwo.R;
 
 /**
  * Created by dabo on 2018/6/24.
  */
 
-public class XSPublishFragment extends Fragment {
-    public XSPublishFragment() {
+public class MainMsgFragment extends Fragment {
+
+    public MainMsgFragment() {
+
     }
 
     private View view;
@@ -23,7 +25,7 @@ public class XSPublishFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (view == null) {
-            view = inflater.inflate(R.layout.fragment_main_publish, null);
+            view = inflater.inflate(R.layout.fragment_main_message, null);
             initViews();
         }
         return view;

@@ -1,4 +1,4 @@
-package com.foumiu.start.huahong;
+package com.foumiu.start.bangwo;
 
 import org.junit.Test;
 
